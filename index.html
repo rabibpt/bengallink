@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bengal Link Travel Agency – Explore the World with Ease</title>
+  <meta name="description" content="Bengal Link Travel Agency – Your trusted travel agency for domestic & international tours, flight booking, hotel booking, visa assistance and customized travel planning." />
+  <meta name="keywords" content="Bengal Link Travel Agency, tour packages, international tours, domestic tours, visa assistance, flight booking, hotel booking" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ─────────────────────────────────────────────
+       CSS CUSTOM PROPERTIES
+    ───────────────────────────────────────────── */
+    :root {
+      --navy:       #0c1b33;
+      --ocean:      #1a4f7a;
+      --sky:        #2e86c1;
+      --aqua:       #48cae4;
+      --gold:       #e8a838;
+      --sand:       #f5e6ca;
+      --coral:      #e76f51;
+      --emerald:    #2d6a4f;
+      --white:      #ffffff;
+      --off-white:  #f8f6f1;
+      --text-dark:  #1a1a2e;
+      --text-mid:   #4a5568;
+      --text-light: #8a9bb0;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'DM Sans', sans-serif;
+      --font-accent:  'Caveat', cursive;
+
+      --shadow-sm:  0 2px 12px rgba(12,27,51,.08);
+      --shadow-md:  0 8px 32px rgba(12,27,51,.14);
+      --shadow-lg:  0 20px 60px rgba(12,27,51,.20);
+      --radius:     14px;
+      --radius-lg:  24px;
+      --transition: .35s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ─────────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a  { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ─────────────────────────────────────────────
+       UTILITY
+    ───────────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 96px 0; }
+    .section--alt { background: var(--off-white); }
+
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-accent); font-size: 1.1rem; color: var(--gold);
+      letter-spacing: .5px; margin-bottom: 12px;
+    }
+    .tag::before {
+      content: ''; display: block; width: 28px; height: 2px;
+      background: var(--gold); border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem; color: var(--text-mid);
+      max-width: 560px; margin-bottom: 56px;
+    }
+    .section-header { margin-bottom: 0; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin-inline: auto; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 32px; border-radius: 50px;
+      font-family: var(--font-body); font-weight: 500;
+      font-size: .95rem; letter-spacing: .3px;
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold) 0%, #d4902a 100%);
+      color: var(--white); box-shadow: 0 4px 20px rgba(232,168,56,.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(232,168,56,.45);
+    }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,.7);
+      color: var(--white);
+      backdrop-filter: blur(4px);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,.15);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+    .btn-dark {
+      background: var(--navy); color: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-dark:hover { background: var(--ocean); transform: translateY(-2px); }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ─────────────────────────────────────────────
+       NAVIGATION
+    ───────────────────────────────────────────── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 20px 0;
+      transition: var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(12,27,51,.96);
+      backdrop-filter: blur(16px);
+      padding: 14px 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,.2);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .nav-logo-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--gold), #d4902a);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: var(--white);
+      box-shadow: 0 4px 16px rgba(232,168,56,.4);
+    }
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--white); line-height: 1;
+    }
+    .nav-logo-text span {
+      font-size: .7rem; font-family: var(--font-body);
+      font-weight: 300; letter-spacing: 2px;
+      display: block; color: rgba(255,255,255,.65);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.85); font-size: .9rem; font-weight: 400;
+      padding: 8px 16px; border-radius: 50px;
+      transition: var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--white); background: rgba(255,255,255,.1);
+    }
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--white) !important;
+      font-weight: 500 !important;
+      box-shadow: 0 4px 16px rgba(232,168,56,.3);
+    }
+    .nav-cta:hover { background: #d4902a !important; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; padding: 8px;
+    }
+    .hamburger span {
+      display: block; width: 26px; height: 2px;
+      background: var(--white); border-radius: 2px;
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+    .mobile-menu {
+      display: none; position: fixed;
+      top: 74px; left: 0; right: 0;
+      background: rgba(12,27,51,.97); backdrop-filter: blur(20px);
+      padding: 24px; z-index: 999;
+      border-top: 1px solid rgba(255,255,255,.1);
+      flex-direction: column; gap: 4px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: rgba(255,255,255,.85); padding: 14px 16px;
+      border-radius: 10px; font-size: 1rem;
+      transition: var(--transition);
+    }
+    .mobile-menu a:hover { background: rgba(255,255,255,.08); color: var(--white); }
+
+    /* ─────────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────────── */
+    #home {
+      min-height: 100vh; position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-slides { width: 100%; height: 100%; position: relative; }
+    .hero-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1.2s ease;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-slide::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(12,27,51,.78) 0%,
+        rgba(26,79,122,.5) 50%,
+        rgba(12,27,51,.3) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 720px;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-accent); font-size: 1.3rem; color: var(--gold);
+      margin-bottom: 20px; opacity: 0;
+      animation: slideUp .8s .3s ease forwards;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      font-weight: 600; color: var(--white);
+      line-height: 1.1; margin-bottom: 24px;
+      opacity: 0; animation: slideUp .8s .5s ease forwards;
+    }
+    .hero-title em { color: var(--aqua); font-style: italic; }
+    .hero-sub {
+      font-size: 1.1rem; color: rgba(255,255,255,.8);
+      margin-bottom: 40px; max-width: 540px;
+      opacity: 0; animation: slideUp .8s .7s ease forwards;
+    }
+    .hero-btns {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      opacity: 0; animation: slideUp .8s .9s ease forwards;
+    }
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 64px; flex-wrap: wrap;
+      opacity: 0; animation: slideUp .8s 1.1s ease forwards;
+    }
+    .hero-stat { text-align: left; }
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem; font-weight: 700; color: var(--gold);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: .8rem; color: rgba(255,255,255,.6);
+      text-transform: uppercase; letter-spacing: 1.5px;
+      margin-top: 4px;
+    }
+
+    .hero-dots {
+      position: absolute; bottom: 40px; right: 40px;
+      display: flex; gap: 10px; z-index: 3;
+    }
+    .hero-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,.4); cursor: pointer;
+      transition: var(--transition); border: none;
+    }
+    .hero-dot.active { background: var(--gold); width: 28px; border-radius: 4px; }
+
+    .scroll-indicator {
+      position: absolute; bottom: 36px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 3; display: flex; flex-direction: column;
+      align-items: center; gap: 8px;
+    }
+    .scroll-indicator span {
+      font-size: .7rem; color: rgba(255,255,255,.5);
+      text-transform: uppercase; letter-spacing: 2px;
+    }
+    .scroll-mouse {
+      width: 22px; height: 36px; border: 2px solid rgba(255,255,255,.4);
+      border-radius: 11px; display: flex; justify-content: center; padding-top: 6px;
+    }
+    .scroll-mouse::after {
+      content: ''; width: 3px; height: 8px;
+      background: var(--gold); border-radius: 2px;
+      animation: scrollBounce 1.8s infinite;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollBounce {
+      0%,100% { transform: translateY(0); opacity: 1; }
+      60%     { transform: translateY(10px); opacity: 0; }
+    }
+
+    /* ─────────────────────────────────────────────
+       ABOUT STRIP (homepage)
+    ───────────────────────────────────────────── */
+    .about-strip {
+      background: var(--navy); color: var(--white);
+      padding: 48px 0;
+    }
+    .about-strip-inner {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px; text-align: center;
+    }
+    .strip-item i { font-size: 2rem; color: var(--gold); margin-bottom: 12px; }
+    .strip-item h4 {
+      font-family: var(--font-display); font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+    .strip-item p { font-size: .88rem; color: rgba(255,255,255,.6); }
+
+    /* ─────────────────────────────────────────────
+       ABOUT PAGE SECTION
+    ───────────────────────────────────────────── */
+    #about .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 72px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-main {
+      width: 100%; height: 480px;
+      object-fit: cover; border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+    .about-img-badge {
+      position: absolute; bottom: -24px; right: -24px;
+      background: var(--gold); color: var(--white);
+      border-radius: var(--radius); padding: 24px;
+      box-shadow: var(--shadow-md);
+      text-align: center; min-width: 130px;
+    }
+    .about-img-badge strong {
+      display: block; font-family: var(--font-display);
+      font-size: 2.5rem; font-weight: 700; line-height: 1;
+    }
+    .about-img-badge span { font-size: .78rem; text-transform: uppercase; letter-spacing: 1px; }
+    .about-img-small {
+      position: absolute; top: -24px; left: -24px;
+      width: 140px; height: 140px; object-fit: cover;
+      border-radius: var(--radius); box-shadow: var(--shadow-md);
+      border: 4px solid var(--white);
+    }
+
+    .about-content .tag { margin-top: 8px; }
+    .about-list { margin: 28px 0; display: flex; flex-direction: column; gap: 16px; }
+    .about-list-item {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .about-list-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(46,134,193,.12); color: var(--sky);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .about-list-text h4 { font-size: 1rem; font-weight: 600; margin-bottom: 2px; }
+    .about-list-text p  { font-size: .88rem; color: var(--text-mid); }
+
+    .mv-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+      margin-top: 64px;
+    }
+    .mv-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 32px; box-shadow: var(--shadow-sm);
+      border-top: 4px solid var(--gold);
+      transition: var(--transition);
+    }
+    .mv-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .mv-card i { font-size: 1.8rem; color: var(--gold); margin-bottom: 16px; }
+    .mv-card h3 {
+      font-family: var(--font-display); font-size: 1.4rem;
+      margin-bottom: 12px; color: var(--navy);
+    }
+    .mv-card p { font-size: .9rem; color: var(--text-mid); }
+
+    .achievements { display: flex; gap: 32px; margin-top: 40px; flex-wrap: wrap; }
+    .ach-item { text-align: center; }
+    .ach-num {
+      font-family: var(--font-display); font-size: 2.4rem;
+      font-weight: 700; color: var(--sky);
+    }
+    .ach-label { font-size: .8rem; color: var(--text-mid); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ─────────────────────────────────────────────
+       DESTINATIONS
+    ───────────────────────────────────────────── */
+    .dest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 280px 280px;
+      gap: 20px;
+    }
+    .dest-card {
+      position: relative; overflow: hidden;
+      border-radius: var(--radius-lg); cursor: pointer;
+      transition: var(--transition);
+    }
+    .dest-card:first-child {
+      grid-column: 1 / 2; grid-row: 1 / 3;
+    }
+    .dest-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .dest-card:hover img { transform: scale(1.06); }
+    .dest-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(12,27,51,.8) 0%, transparent 50%);
+    }
+    .dest-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 24px; z-index: 2; color: var(--white);
+    }
+    .dest-info h3 {
+      font-family: var(--font-display); font-size: 1.5rem;
+      font-weight: 600; margin-bottom: 4px;
+    }
+    .dest-info .dest-sub { font-size: .82rem; color: rgba(255,255,255,.7); }
+    .dest-tag {
+      position: absolute; top: 16px; left: 16px;
+      background: var(--gold); color: var(--white);
+      padding: 4px 14px; border-radius: 50px;
+      font-size: .75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .5px;
+      z-index: 2;
+    }
+
+    /* ─────────────────────────────────────────────
+       SERVICES
+    ───────────────────────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .service-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 40px 32px; box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,.06);
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--sky), var(--aqua));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .4s ease;
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 64px; height: 64px; border-radius: 18px;
+      background: linear-gradient(135deg, rgba(46,134,193,.15), rgba(72,202,228,.1));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; color: var(--sky); margin-bottom: 24px;
+    }
+    .service-card h3 {
+      font-family: var(--font-display); font-size: 1.35rem;
+      margin-bottom: 12px; color: var(--navy);
+    }
+    .service-card p { font-size: .9rem; color: var(--text-mid); margin-bottom: 20px; }
+    .service-link {
+      font-size: .88rem; font-weight: 500; color: var(--sky);
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: var(--transition);
+    }
+    .service-link:hover { gap: 12px; }
+
+    /* ─────────────────────────────────────────────
+       PACKAGES
+    ───────────────────────────────────────────── */
+    .packages-filter {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .filter-btn {
+      padding: 10px 24px; border-radius: 50px;
+      font-size: .88rem; font-weight: 500;
+      border: 1.5px solid rgba(0,0,0,.12); color: var(--text-mid);
+      transition: var(--transition);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy);
+    }
+
+    .packages-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .pkg-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+    .pkg-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .pkg-img-wrap {
+      position: relative; height: 220px; overflow: hidden;
+    }
+    .pkg-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .pkg-card:hover .pkg-img-wrap img { transform: scale(1.06); }
+    .pkg-type {
+      position: absolute; top: 16px; right: 16px;
+      background: rgba(12,27,51,.85); color: var(--white);
+      padding: 5px 14px; border-radius: 50px;
+      font-size: .72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .5px;
+      backdrop-filter: blur(4px);
+    }
+    .pkg-price-badge {
+      position: absolute; bottom: 16px; left: 16px;
+      background: var(--gold); color: var(--white);
+      padding: 6px 18px; border-radius: 50px;
+      font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
+    }
+
+    .pkg-body { padding: 24px; }
+    .pkg-meta {
+      display: flex; gap: 16px; margin-bottom: 12px;
+    }
+    .pkg-meta span {
+      font-size: .78rem; color: var(--text-light);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .pkg-meta i { color: var(--sky); }
+    .pkg-body h3 {
+      font-family: var(--font-display); font-size: 1.35rem;
+      margin-bottom: 10px; color: var(--navy);
+    }
+    .pkg-highlights {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin: 16px 0;
+    }
+    .pkg-highlights span {
+      background: rgba(46,134,193,.09); color: var(--sky);
+      padding: 4px 12px; border-radius: 50px; font-size: .76rem;
+      font-weight: 500;
+    }
+    .pkg-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 16px; border-top: 1px solid rgba(0,0,0,.07);
+    }
+    .pkg-rating { display: flex; align-items: center; gap: 5px; }
+    .pkg-rating i { color: var(--gold); font-size: .85rem; }
+    .pkg-rating span { font-size: .82rem; color: var(--text-mid); }
+    .pkg-book-btn {
+      padding: 10px 22px; border-radius: 50px;
+      background: var(--navy); color: var(--white);
+      font-size: .85rem; font-weight: 500;
+      transition: var(--transition);
+    }
+    .pkg-book-btn:hover { background: var(--ocean); transform: translateY(-2px); }
+
+    /* ─────────────────────────────────────────────
+       TESTIMONIALS
+    ───────────────────────────────────────────── */
+    #testimonials { background: var(--navy); }
+    .testimonials-slider {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testi-card {
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-lg); padding: 36px;
+      transition: var(--transition);
+    }
+    .testi-card:hover {
+      background: rgba(255,255,255,.1);
+      transform: translateY(-6px);
+    }
+    .testi-stars { color: var(--gold); margin-bottom: 16px; font-size: .9rem; }
+    .testi-text {
+      font-size: .95rem; color: rgba(255,255,255,.8);
+      font-style: italic; margin-bottom: 24px; line-height: 1.8;
+    }
+    .testi-author {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .testi-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      object-fit: cover; border: 2px solid var(--gold);
+    }
+    .testi-name { font-weight: 600; color: var(--white); font-size: .92rem; }
+    .testi-loc { font-size: .78rem; color: rgba(255,255,255,.5); }
+
+    /* ─────────────────────────────────────────────
+       GALLERY
+    ───────────────────────────────────────────── */
+    .gallery-grid {
+      columns: 3; gap: 16px;
+    }
+    .gallery-item {
+      break-inside: avoid; margin-bottom: 16px;
+      border-radius: var(--radius); overflow: hidden;
+      cursor: pointer; position: relative;
+    }
+    .gallery-item img {
+      width: 100%; display: block;
+      transition: transform .5s ease;
+    }
+    .gallery-item::after {
+      content: '\f00e'; font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute; inset: 0;
+      background: rgba(12,27,51,.6);
+      color: var(--white); font-size: 1.6rem;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: var(--transition);
+    }
+    .gallery-item:hover img    { transform: scale(1.05); }
+    .gallery-item:hover::after { opacity: 1; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,.92); align-items: center;
+      justify-content: center; padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: var(--radius); }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 28px;
+      color: var(--white); font-size: 2rem; cursor: pointer;
+      background: none; border: none; line-height: 1;
+      transition: var(--transition);
+    }
+    .lightbox-close:hover { color: var(--gold); }
+
+    /* ─────────────────────────────────────────────
+       CTA BANNER
+    ───────────────────────────────────────────── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--sky) 0%, var(--ocean) 100%);
+      padding: 80px 0; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white); margin-bottom: 16px;
+      position: relative;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,.85); font-size: 1.05rem;
+      margin-bottom: 36px; position: relative;
+    }
+    .cta-banner .cta-btns {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      position: relative;
+    }
+    .btn-white {
+      background: var(--white); color: var(--navy);
+      box-shadow: 0 4px 20px rgba(0,0,0,.2);
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.25); }
+
+    /* ─────────────────────────────────────────────
+       CONTACT
+    ───────────────────────────────────────────── */
+    #contact .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px;
+    }
+    .contact-info h3 {
+      font-family: var(--font-display); font-size: 1.8rem;
+      margin-bottom: 20px; color: var(--navy);
+    }
+    .contact-info p { color: var(--text-mid); margin-bottom: 32px; }
+    .contact-details { display: flex; flex-direction: column; gap: 20px; }
+    .contact-detail {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .contact-detail-icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--sky), var(--ocean));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--white); flex-shrink: 0;
+    }
+    .contact-detail-body h4 { font-size: 1rem; font-weight: 600; margin-bottom: 2px; }
+    .contact-detail-body p { font-size: .9rem; color: var(--text-mid); }
+
+    .contact-social {
+      display: flex; gap: 12px; margin-top: 32px;
+    }
+    .social-btn {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; transition: var(--transition);
+      color: var(--white);
+    }
+    .social-btn.fb   { background: #1877f2; }
+    .social-btn.ig   { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .social-btn.tw   { background: #1da1f2; }
+    .social-btn.yt   { background: #ff0000; }
+    .social-btn.wa   { background: #25d366; }
+    .social-btn:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+
+    .map-embed {
+      margin-top: 32px; border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-sm);
+      height: 220px;
+    }
+    .map-embed iframe { width: 100%; height: 100%; border: none; }
+
+    .contact-form {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 44px; box-shadow: var(--shadow-md);
+    }
+    .contact-form h3 {
+      font-family: var(--font-display); font-size: 1.8rem;
+      margin-bottom: 8px; color: var(--navy);
+    }
+    .contact-form .form-sub { font-size: .9rem; color: var(--text-mid); margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-size: .85rem; font-weight: 500;
+      color: var(--text-dark); margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%; padding: 14px 16px;
+      border: 1.5px solid rgba(0,0,0,.1); border-radius: 10px;
+      font-family: var(--font-body); font-size: .92rem;
+      color: var(--text-dark); background: var(--off-white);
+      transition: var(--transition); outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--sky); background: var(--white);
+      box-shadow: 0 0 0 3px rgba(46,134,193,.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select { cursor: pointer; }
+    .form-submit {
+      width: 100%; padding: 16px; border-radius: 50px;
+      background: linear-gradient(135deg, var(--sky), var(--ocean));
+      color: var(--white); font-size: 1rem; font-weight: 600;
+      font-family: var(--font-body); cursor: pointer;
+      transition: var(--transition); border: none;
+      box-shadow: 0 6px 24px rgba(46,134,193,.3);
+    }
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(46,134,193,.4);
+    }
+    .form-success {
+      display: none; text-align: center; padding: 32px;
+    }
+    .form-success i { font-size: 3rem; color: var(--emerald); margin-bottom: 16px; }
+    .form-success h4 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 8px; }
+    .form-success p  { font-size: .9rem; color: var(--text-mid); }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.7);
+    }
+    .footer-top {
+      padding: 72px 0 48px;
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      gap: 48px;
+    }
+    .footer-brand .nav-logo { margin-bottom: 20px; }
+    .footer-brand p {
+      font-size: .88rem; line-height: 1.8; color: rgba(255,255,255,.55);
+      margin-bottom: 24px;
+    }
+    .footer-col h4 {
+      font-size: .8rem; text-transform: uppercase; letter-spacing: 2px;
+      color: rgba(255,255,255,.4); margin-bottom: 20px; font-weight: 600;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 12px; }
+    .footer-col ul a {
+      font-size: .88rem; color: rgba(255,255,255,.6);
+      transition: var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--gold); }
+    .footer-contact-item {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: .86rem; color: rgba(255,255,255,.6);
+      margin-bottom: 12px;
+    }
+    .footer-contact-item i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 24px 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: .82rem; }
+    .footer-bottom a { color: var(--gold); }
+
+    /* ─────────────────────────────────────────────
+       WHATSAPP BUTTON
+    ───────────────────────────────────────────── */
+    .whatsapp-btn {
+      position: fixed; bottom: 32px; right: 32px; z-index: 999;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #25d366;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; color: var(--white);
+      box-shadow: 0 6px 24px rgba(37,211,102,.5);
+      transition: var(--transition); cursor: pointer;
+    }
+    .whatsapp-btn:hover {
+      transform: scale(1.1) translateY(-4px);
+      box-shadow: 0 10px 32px rgba(37,211,102,.6);
+    }
+    .whatsapp-btn .wa-pulse {
+      position: absolute; inset: 0; border-radius: 50%;
+      background: #25d366; z-index: -1;
+      animation: waPulse 2s infinite;
+    }
+    @keyframes waPulse {
+      0%   { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    .whatsapp-tooltip {
+      position: absolute; right: 72px; top: 50%;
+      transform: translateY(-50%);
+      background: var(--navy); color: var(--white);
+      padding: 8px 14px; border-radius: 8px;
+      font-size: .82rem; white-space: nowrap;
+      pointer-events: none; opacity: 0;
+      transition: var(--transition);
+    }
+    .whatsapp-btn:hover .whatsapp-tooltip { opacity: 1; }
+
+    /* Back to top */
+    #back-top {
+      position: fixed; bottom: 32px; left: 32px; z-index: 999;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--navy); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; cursor: pointer;
+      box-shadow: var(--shadow-md); transition: var(--transition);
+      opacity: 0; pointer-events: none;
+    }
+    #back-top.visible { opacity: 1; pointer-events: all; }
+    #back-top:hover { background: var(--sky); transform: translateY(-4px); }
+
+    /* Modal */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,.7); align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 40px; max-width: 520px; width: 100%;
+      box-shadow: var(--shadow-lg); position: relative;
+      animation: modalIn .4s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(.9) translateY(20px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 20px;
+      font-size: 1.4rem; color: var(--text-mid); cursor: pointer;
+      background: none; border: none; transition: var(--transition);
+    }
+    .modal-close:hover { color: var(--coral); }
+    .modal-box h3 {
+      font-family: var(--font-display); font-size: 1.8rem;
+      margin-bottom: 8px; color: var(--navy);
+    }
+    .modal-box .modal-sub {
+      font-size: .88rem; color: var(--text-mid); margin-bottom: 24px;
+    }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE (UPDATED)
+    ───────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .dest-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .dest-card:first-child { grid-column: 1 / 3; grid-row: auto; height: 280px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      #about .about-grid { gap: 48px; }
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .section { padding: 64px 0; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-title { font-size: 2.5rem; }
+      .hero-sub { font-size: 1rem; }
+      .hero-stats { gap: 24px; }
+      #about .about-grid { grid-template-columns: 1fr; }
+      .about-img-small { display: none; }
+      .about-img-badge { right: 12px; bottom: -12px; }
+      .mv-grid { grid-template-columns: 1fr; }
+      .achievements { gap: 32px; justify-content: center; }
+      .testimonials-slider { grid-template-columns: 1fr; }
+      .dest-grid { grid-template-columns: 1fr; }
+      .dest-card:first-child { grid-column: auto; grid-row: auto; }
+      .services-grid { grid-template-columns: 1fr; }
+      .packages-grid { grid-template-columns: 1fr; }
+      #contact .contact-grid { grid-template-columns: 1fr; }
+      .contact-form { padding: 32px 24px; }
+      .gallery-grid { columns: 2; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-img-main { height: 320px; }
+      .about-strip-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .modal-box { margin: 16px; padding: 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .section { padding: 48px 0; }
+      .gallery-grid { columns: 1; }
+      .hero-btns { flex-direction: column; width: 100%; }
+      .hero-btns .btn { width: 100%; justify-content: center; }
+      .hero-dots { right: 16px; bottom: 80px; }
+      .hero-stats { flex-direction: column; gap: 16px; margin-top: 40px; }
+      .about-strip-inner { grid-template-columns: 1fr; }
+      .ach-item { width: 45%; }
+      .whatsapp-btn { bottom: 20px; right: 20px; width: 52px; height: 52px; font-size: 1.4rem; }
+      #back-top { bottom: 20px; left: 20px; width: 44px; height: 44px; }
+      .cta-btns { flex-direction: column; width: 100%; }
+      .cta-btns .btn { width: 100%; justify-content: center; }
+      .packages-filter { justify-content: center; }
+      .pkg-card { border-radius: 16px; }
+      .dest-card { height: 240px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-icon" style="background:linear-gradient(135deg,#1a6b3a,#27ae60);font-size:1rem;font-weight:800;letter-spacing:-1px;">BL</div>
+      <div class="nav-logo-text">
+        Bengal Link Travel Agency
+        <span>Explore the World with Ease</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta btn">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home"     onclick="closeMobile()">Home</a>
+  <a href="#about"    onclick="closeMobile()">About Us</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#packages" onclick="closeMobile()">Packages</a>
+  <a href="#gallery"  onclick="closeMobile()">Gallery</a>
+  <a href="#contact"  onclick="closeMobile()">Contact</a>
+  <a href="#contact"  onclick="closeMobile()" style="background:var(--gold);color:#fff;margin-top:8px;text-align:center;border-radius:10px;">
+    <i class="fas fa-calendar-check"></i> Book Now
+  </a>
+</div>
+
+<section id="home">
+  <div class="hero-bg">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1600&q=80')"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Discover <em>Extraordinary</em><br/>Places Around the Globe
+      </h1>
+      <p class="hero-sub">
+        Tailored travel experiences for families, solo explorers, couples & corporate teams.
+        Let us craft your perfect escape.
+      </p>
+      <div class="hero-btns">
+        <a href="#packages" class="btn btn-primary">
+          <i class="fas fa-compass"></i> Explore Packages
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fas fa-phone"></i> Talk to an Expert
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">12K+</div>
+          <div class="hero-stat-label">Happy Travelers</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">85+</div>
+          <div class="hero-stat-label">Destinations</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">14</div>
+          <div class="hero-stat-label">Years of Excellence</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4.9★</div>
+          <div class="hero-stat-label">Customer Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" onclick="goSlide(0)"></button>
+    <button class="hero-dot"        onclick="goSlide(1)"></button>
+    <button class="hero-dot"        onclick="goSlide(2)"></button>
+    <button class="hero-dot"        onclick="goSlide(3)"></button>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-mouse"></div>
+  </div>
+</section>
+
+<div class="about-strip">
+  <div class="container">
+    <div class="about-strip-inner">
+      <div class="strip-item fade-in">
+        <i class="fas fa-shield-halved"></i>
+        <h4>100% Secure Booking</h4>
+        <p>Your data and payments are always protected</p>
+      </div>
+      <div class="strip-item fade-in">
+        <i class="fas fa-headset"></i>
+        <h4>24 / 7 Support</h4>
+        <p>Round-the-clock expert travel assistance</p>
+      </div>
+      <div class="strip-item fade-in">
+        <i class="fas fa-tags"></i>
+        <h4>Best Price Guarantee</h4>
+        <p>We match or beat any comparable offer</p>
+      </div>
+      <div class="strip-item fade-in">
+        <i class="fas fa-map-location-dot"></i>
+        <h4>Handpicked Itineraries</h4>
+        <p>Curated by expert travel consultants</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=700&q=80"
+          alt="Travel consultant helping client" class="about-img-main"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300&q=80"
+          alt="Happy travelers" class="about-img-small"
+        />
+        <div class="about-img-badge">
+          <strong>14+</strong>
+          <span>Years of<br/>Experience</span>
+        </div>
+      </div>
+      <div class="about-content fade-in">
+        <span class="tag">About Bengal Link Travel Agency</span>
+        <h2 class="section-title">We Turn Your Dream Trips into Lifetime Memories</h2>
+        <p style="color:var(--text-mid);margin-bottom:12px;">
+          Founded in 2010, Bengal Link Travel Agency is a full-service travel agency headquartered in Siliguri, West Bengal.
+          We specialize in crafting bespoke travel experiences across India and 60+ international destinations.
+        </p>
+        <p style="color:var(--text-mid);">
+          Our team of passionate travel consultants combines deep destination knowledge with personal care —
+          because for us, travel isn't a transaction, it's a transformation.
+        </p>
+        <div class="about-list">
+          <div class="about-list-item">
+            <div class="about-list-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="about-list-text">
+              <h4>Expert Travel Consultants</h4>
+              <p>Certified professionals with first-hand destination experience</p>
+            </div>
+          </div>
+          <div class="about-list-item">
+            <div class="about-list-icon"><i class="fas fa-route"></i></div>
+            <div class="about-list-text">
+              <h4>Fully Customized Itineraries</h4>
+              <p>Every trip is tailor-made to fit your style, budget & timeline</p>
+            </div>
+          </div>
+          <div class="about-list-item">
+            <div class="about-list-icon"><i class="fas fa-award"></i></div>
+            <div class="about-list-text">
+              <h4>Award-Winning Service</h4>
+              <p>Best Travel Agency in North Bengal – 2022 & 2023</p>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-dark">
+          <i class="fas fa-calendar-check"></i> Plan My Trip
+        </a>
+      </div>
+    </div>
+
+    <div class="mv-grid" style="margin-top:80px;">
+      <div class="mv-card fade-in">
+        <i class="fas fa-bullseye"></i>
+        <h3>Our Mission</h3>
+        <p>To make world travel accessible, enriching, and stress-free for every kind of traveler —
+          by delivering exceptional service, transparent pricing, and unforgettable experiences every single time.</p>
+      </div>
+      <div class="mv-card fade-in">
+        <i class="fas fa-eye"></i>
+        <h3>Our Vision</h3>
+        <p>To become India's most trusted travel partner — one where every traveler feels personally cared for,
+          confidently guided, and inspired to explore beyond the ordinary.</p>
+      </div>
+    </div>
+
+    <div class="achievements fade-in" style="margin-top:56px;">
+      <div class="ach-item"><div class="ach-num">12,500+</div><div class="ach-label">Happy Travelers</div></div>
+      <div class="ach-item"><div class="ach-num">85+</div><div class="ach-label">Destinations</div></div>
+      <div class="ach-item"><div class="ach-num">450+</div><div class="ach-label">Tour Packages</div></div>
+      <div class="ach-item"><div class="ach-num">98%</div><div class="ach-label">Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="destinations">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="tag">Top Picks</span>
+      <h2 class="section-title">Popular Destinations</h2>
+      <p class="section-sub">From the misty peaks of the Himalayas to the sun-soaked shores of Bali — explore our most-loved destinations handpicked by our travel experts.</p>
+    </div>
+    <div class="dest-grid">
+      <div class="dest-card fade-in">
+        <span class="dest-tag">Most Popular</span>
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80" alt="Manali, Himachal Pradesh" loading="lazy"/>
+        <div class="dest-info">
+          <h3>Manali, Himachal</h3>
+          <p class="dest-sub">🌲 Snow peaks · Adventure · Serenity</p>
+        </div>
+      </div>
+      <div class="dest-card fade-in">
+        <span class="dest-tag">International</span>
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali, Indonesia" loading="lazy"/>
+        <div class="dest-info">
+          <h3>Bali, Indonesia</h3>
+          <p class="dest-sub">🌺 Culture · Beaches · Temples</p>
+        </div>
+      </div>
+      <div class="dest-card fade-in">
+        <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&q=80" alt="Kashmir" loading="lazy"/>
+        <div class="dest-info">
+          <h3>Kashmir, India</h3>
+          <p class="dest-sub">❄️ Paradise on Earth · Dal Lake</p>
+        </div>
+      </div>
+      <div class="dest-card fade-in">
+        <span class="dest-tag">Trending</span>
+        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80" alt="London, UK" loading="lazy"/>
+        <div class="dest-info">
+          <h3>London, UK</h3>
+          <p class="dest-sub">🎡 History · Culture · Shopping</p>
+        </div>
+      </div>
+      <div class="dest-card fade-in">
+        <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80" alt="Maldives" loading="lazy"/>
+        <div class="dest-info">
+          <h3>Maldives</h3>
+          <p class="dest-sub">🐠 Overwater villas · Crystal waters</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="tag">What We Offer</span>
+      <h2 class="section-title">Our Travel Services</h2>
+      <p class="section-sub">From booking a single flight to planning a month-long world tour — we handle every detail so you can focus on creating memories.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-globe-asia"></i></div>
+        <h3>Domestic Tour Packages</h3>
+        <p>Explore the incredible diversity of India — from the golden deserts of Rajasthan to the backwaters of Kerala and the Northeast frontier states.</p>
+        <a href="#packages" class="service-link">Browse Packages <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
+        <h3>International Tours</h3>
+        <p>Curated international itineraries covering Europe, Southeast Asia, the Middle East, the Americas and beyond — at unbeatable group & solo rates.</p>
+        <a href="#packages" class="service-link">Browse Packages <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-ticket-simple"></i></div>
+        <h3>Flight Booking</h3>
+        <p>Domestic and international air ticket booking with real-time pricing, seat selection, and expert help navigating complex multi-city itineraries.</p>
+        <a href="#contact" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-hotel"></i></div>
+        <h3>Hotel Booking</h3>
+        <p>Handpicked hotels — from luxury resorts and boutique stays to comfortable budget options — with negotiated rates and verified reviews.</p>
+        <a href="#contact" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-passport"></i></div>
+        <h3>Visa Assistance</h3>
+        <p>Complete visa documentation, application support and embassy appointment guidance for 50+ countries. We simplify the process from start to finish.</p>
+        <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-map-location-dot"></i></div>
+        <h3>Customized Travel Planning</h3>
+        <p>Tell us your dream destination, budget and dates — our consultants will craft a 100% personalized itinerary just for you, down to every transfer and meal.</p>
+        <a href="#contact" class="service-link">Start Planning <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="packages" class="section section--alt">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="tag">Travel Packages</span>
+      <h2 class="section-title">Our Popular Tour Packages</h2>
+      <p class="section-sub">All-inclusive packages designed for every type of traveler — covering transport, hotels, sightseeing and guided experiences.</p>
+    </div>
+
+    <div class="packages-filter fade-in">
+      <button class="filter-btn active" data-filter="all">All Packages</button>
+      <button class="filter-btn" data-filter="domestic">Domestic</button>
+      <button class="filter-btn" data-filter="international">International</button>
+      <button class="filter-btn" data-filter="honeymoon">Honeymoon</button>
+      <button class="filter-btn" data-filter="family">Family</button>
+      <button class="filter-btn" data-filter="adventure">Adventure</button>
+    </div>
+
+    <div class="packages-grid" id="packagesGrid">
+
+      <div class="pkg-card fade-in" data-type="domestic">
+        <div class="pkg-img-wrap">
+          <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=80" alt="Kashmir Tour" loading="lazy"/>
+          <span class="pkg-type">Domestic</span>
+          <span class="pkg-price-badge">₹28,999/person</span>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> 7 Nights / 8 Days</span>
+            <span><i class="fas fa-users"></i> Group & Private</span>
+          </div>
+          <h3>Enchanting Kashmir</h3>
+          <p style="font-size:.88rem;color:var(--text-mid)">Srinagar · Gulmarg · Pahalgam · Sonamarg. Experience the crown of India in its full glory.</p>
+          <div class="pkg-highlights">
+            <span>Houseboat Stay</span>
+            <span>Shikara Ride</span>
+            <span>Gondola Cable Car</span>
+            <span>All Meals</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>4.9 (218 reviews)</span>
+            </div>
+            <button class="pkg-book-btn" onclick="openBookingModal('Enchanting Kashmir – ₹28,999')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-card fade-in" data-type="international honeymoon">
+        <div class="pkg-img-wrap">
+          <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" alt="Maldives Honeymoon" loading="lazy"/>
+          <span class="pkg-type">International</span>
+          <span class="pkg-price-badge">₹89,999/couple</span>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> 5 Nights / 6 Days</span>
+            <span><i class="fas fa-heart"></i> Honeymoon</span>
+          </div>
+          <h3>Maldives Paradise Escape</h3>
+          <p style="font-size:.88rem;color:var(--text-mid)">Overwater villa · Private beach · Snorkeling · Sunset cruise. Romance redefined.</p>
+          <div class="pkg-highlights">
+            <span>Overwater Villa</span>
+            <span>Candle-lit Dinner</span>
+            <span>Snorkeling</span>
+            <span>Spa Session</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>5.0 (143 reviews)</span>
+            </div>
+            <button class="pkg-book-btn" onclick="openBookingModal('Maldives Paradise Escape – ₹89,999')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-card fade-in" data-type="international">
+        <div class="pkg-img-wrap">
+          <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=600&q=80" alt="Bali Tour" loading="lazy"/>
+          <span class="pkg-type">International</span>
+          <span class="pkg-price-badge">₹54,999/person</span>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> 6 Nights / 7 Days</span>
+            <span><i class="fas fa-users"></i> All Categories</span>
+          </div>
+          <h3>Magical Bali, Indonesia</h3>
+          <p style="font-size:.88rem;color:var(--text-mid)">Ubud · Seminyak · Uluwatu. Temples, terraced rice fields, and turquoise sea.</p>
+          <div class="pkg-highlights">
+            <span>Tanah Lot Temple</span>
+            <span>Rice Terrace Tour</span>
+            <span>Balinese Cooking</span>
+            <span>Beach Club</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+              <span>4.8 (196 reviews)</span>
+            </div>
+            <button class="pkg-book-btn" onclick="openBookingModal('Magical Bali – ₹54,999')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-card fade-in" data-type="family domestic">
+        <div class="pkg-img-wrap">
+          <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80" alt="Goa Family Trip" loading="lazy"/>
+          <span class="pkg-type">Domestic</span>
+          <span class="pkg-price-badge">₹22,499/person</span>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> 4 Nights / 5 Days</span>
+            <span><i class="fas fa-child"></i> Family</span>
+          </div>
+          <h3>Goa Beach Holiday</h3>
+          <p style="font-size:.88rem;color:var(--text-mid)">North Goa · South Goa. Sun, sand, water sports, seafood and vibrant nightlife.</p>
+          <div class="pkg-highlights">
+            <span>Beach Hopping</span>
+            <span>Water Sports</span>
+            <span>Spice Plantation</span>
+            <span>Casino Night</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>4.7 (312 reviews)</span>
+            </div>
+            <button class="pkg-book-btn" onclick="openBookingModal('Goa Beach Holiday – ₹22,499')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-card fade-in" data-type="adventure domestic">
+        <div class="pkg-img-wrap">
+          <img src="https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=600&q=80" alt="Manali Adventure" loading="lazy"/>
+          <span class="pkg-type">Adventure</span>
+          <span class="pkg-price-badge">₹19,999/person</span>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> 6 Nights / 7 Days</span>
+            <span><i class="fas fa-mountain"></i> Adventure</span>
+          </div>
+          <h3>Manali Adventure Camp</h3>
+          <p style="font-size:.88rem;color:var(--text-mid)">Manali · Rohtang Pass · Solang Valley. Thrills, snow and mountain magic.</p>
+          <div class="pkg-highlights">
+            <span>Paragliding</span>
+            <span>River Rafting</span>
+            <span>Snow Trekking</span>
+            <span>Camping</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+              <span>4.8 (274 reviews)</span>
+            </div>
+            <button class="pkg-book-btn" onclick="openBookingModal('Manali Adventure Camp – ₹19,999')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-card fade-in" data-type="international honeymoon">
+        <div class="pkg-img-wrap">
+          <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?w=600&q=80" alt="Europe Tour" loading="lazy"/>
+          <span class="pkg-type">International</span>
+          <span class="pkg-price-badge">₹1,49,999/person</span>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> 12 Nights / 13 Days</span>
+            <span><i class="fas fa-globe"></i> Multi-Country</span>
+          </div>
+          <h3>Best of Europe</h3>
+          <p style="font-size:.88rem;color:var(--text-mid)">Paris · Rome · Switzerland · Amsterdam. A grand European adventure for bucket-list travelers.</p>
+          <div class="pkg-highlights">
+            <span>Eiffel Tower</span>
+            <span>Swiss Alps</span>
+            <span>Vatican City</span>
+            <span>Rhine Cruise</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>4.9 (189 reviews)</span>
+            </div>
+            <button class="pkg-book-btn" onclick="openBookingModal('Best of Europe – ₹1,49,999')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="tag" style="color:var(--gold);">Traveler Stories</span>
+      <h2 class="section-title" style="color:var(--white);">What Our Travelers Say</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.65)">Real reviews from real travelers who trusted Bengal Link Travel Agency with their most precious getaways.</p>
+    </div>
+    <div class="testimonials-slider">
+      <div class="testi-card fade-in">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Booked our honeymoon Maldives package with Bengal Link Travel Agency and it was absolutely flawless. From the overwater villa to the candlelit dinner on the beach — every detail was perfectly arranged. Highly recommended!"</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&q=80" alt="Priya Sharma" class="testi-avatar"/>
+          <div>
+            <div class="testi-name">Priya & Rahul Sharma</div>
+            <div class="testi-loc">📍 Kolkata, West Bengal</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-in">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Our family trip to Kashmir was a dream come true. The team handled everything — flights, hotels, houseboat, local sightseeing — and was available 24/7. My kids still talk about the Shikara ride on Dal Lake!"</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Arun Gupta" class="testi-avatar"/>
+          <div>
+            <div class="testi-name">Arun Gupta</div>
+            <div class="testi-loc">📍 Siliguri, West Bengal</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-in">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I was solo-traveling to Bali for the first time and was nervous. Bengal Link Travel Agency's team built a perfect itinerary, arranged a local guide, and checked in on me every day. I felt completely safe and had the time of my life!"</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80" alt="Sneha Roy" class="testi-avatar"/>
+          <div>
+            <div class="testi-name">Sneha Roy</div>
+            <div class="testi-loc">📍 Darjeeling, West Bengal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section section--alt">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="tag">Photo Stories</span>
+      <h2 class="section-title">Travel Gallery</h2>
+      <p class="section-sub">Glimpses from the journeys we've crafted — breathtaking landscapes, rich cultures, and joy-filled moments.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Mountain peaks" loading="lazy"/>
+      </div>
+      <div class="gallery-item fade-in" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali temple" loading="lazy"/>
+      </div>
+      <div class="gallery-item fade-in" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1499678329028-101435549a4e?w=600&q=80" alt="Beach sunset" loading="lazy"/>
+      </div>
+      <div class="gallery-item fade-in" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80" alt="Tropical beach" loading="lazy"/>
+      </div>
+      <div class="gallery-item fade-in" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80" alt="Boat on ocean" loading="lazy"/>
+      </div>
+      <div class="gallery-item fade-in" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80" alt="London Tower Bridge" loading="lazy"/>
+      </div>
+      <div class="gallery-item fade-in" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1600695268275-1a6468700bd5?w=600&q=80" alt="Safari" loading="lazy"/>
+      </div>
+      <div class="gallery-item fade-in" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Couple travel" loading="lazy"/>
+      </div>
+      <div class="gallery-item fade-in" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80" alt="Paris Eiffel Tower" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner fade-in">
+  <div class="container">
+    <h2>Ready to Start Your Next Adventure?</h2>
+    <p>Talk to our travel experts today and get a free, no-obligation itinerary crafted just for you.</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn btn-white">
+        <i class="fas fa-paper-plane"></i> Get a Free Quote
+      </a>
+      <a href="tel:+919800000000" class="btn btn-outline">
+        <i class="fas fa-phone"></i> +91 90830 54389
+      </a>
+    </div>
+  </div>
+</div>
+
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <span class="tag">Get in Touch</span>
+        <h3>Let's Plan Your Dream Trip Together</h3>
+        <p>Our travel consultants are available Monday–Saturday, 9 AM – 7 PM. Drop us a message anytime and we'll respond within a few hours.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-detail-body">
+              <h4>Phone / WhatsApp</h4>
+              <p>+91 90830 54389</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-detail-body">
+              <h4>Email Address</h4>
+              <p>begallink.in@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-location-dot"></i></div>
+            <div class="contact-detail-body">
+              <h4>Office Address</h4>
+              <p>2nd Floor, Jalpaiguri Road, Hill Cart Road, Siliguri, West Bengal – 734001</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-detail-body">
+              <h4>Working Hours</h4>
+              <p>Monday – Saturday: 9:00 AM – 7:00 PM<br/>Sunday: 10:00 AM – 2:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <a href="https://www.facebook.com/share/17Rzwi6bQA/" target="_blank" rel="noopener" class="social-btn fb"  title="Facebook" ><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn ig"  title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn tw"  title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-btn yt"  title="YouTube"  ><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/919083054389" class="social-btn wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57371.66773399282!2d88.38569497031252!3d26.71735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e441b6e62fe3cf%3A0x9481c574e2e52440!2sSiliguri%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="contact-form fade-in" id="contactFormWrap">
+        <h3>Send Us an Inquiry</h3>
+        <p class="form-sub">Fill out the form and our team will reach out to you within 24 hours.</p>
+        <div id="formBody">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="fname" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="femail" placeholder="you@example.com" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Destination Interest</label>
+              <select id="fdest">
+                <option value="">Select destination type</option>
+                <option>Domestic Tour</option>
+                <option>International Tour</option>
+                <option>Honeymoon Package</option>
+                <option>Family Tour</option>
+                <option>Adventure Tour</option>
+                <option>Corporate Travel</option>
+                <option>Visa Assistance</option>
+                <option>Flight / Hotel Booking</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Travel Date</label>
+              <input type="date" id="fdate" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Your Message *</label>
+            <textarea id="fmsg" placeholder="Tell us about your dream trip — destination, duration, number of travelers, budget range, or any special requirements..."></textarea>
+          </div>
+          <button class="form-submit" onclick="submitForm()">
+            <i class="fas fa-paper-plane" style="margin-right:8px;"></i>
+            Send Inquiry – It's Free!
+          </button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <i class="fas fa-circle-check"></i>
+          <h4>Inquiry Sent Successfully!</h4>
+          <p>Thank you for reaching out. Our travel consultant will call you within 24 hours to discuss your dream trip.</p>
+          <a href="#" onclick="resetForm(event)" style="color:var(--sky);font-size:.9rem;margin-top:12px;display:inline-block;">
+            Send another inquiry →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-icon" style="background:linear-gradient(135deg,#1a6b3a,#27ae60);font-size:1rem;font-weight:800;letter-spacing:-1px;">BL</div>
+          <div class="nav-logo-text">
+            Bengal Link Travel Agency
+            <span>Explore the World with Ease</span>
+          </div>
+        </div>
+        <p>Your trusted travel partner since 2010. We craft unforgettable journeys for families, couples, solo explorers and corporate teams across India and beyond.</p>
+        <div class="contact-social">
+          <a href="https://www.facebook.com/share/17Rzwi6bQA/" target="_blank" rel="noopener" class="social-btn fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn ig"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn tw"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-btn yt"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#packages">Tour Packages</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#services">Domestic Tours</a></li>
+          <li><a href="#services">International Tours</a></li>
+          <li><a href="#services">Flight Booking</a></li>
+          <li><a href="#services">Hotel Booking</a></li>
+          <li><a href="#services">Visa Assistance</a></li>
+          <li><a href="#services">Custom Itineraries</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <div class="footer-contact-item"><i class="fas fa-location-dot"></i> Hill Cart Road, Siliguri, WB – 734001</div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i> +91 90830 54389</div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i> begallink.in@gmail.com</div>
+        <div class="footer-contact-item"><i class="fas fa-clock"></i> Mon–Sat: 9 AM – 7 PM</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 <a href="#home">Bengal Link Travel Agency</a>. All rights reserved. | Designed with ❤️ for travelers.</p>
+      <p>IATA Accredited · ISO 9001:2015 Certified · TAFI Member</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919083054389" class="whatsapp-btn" target="_blank" rel="noopener" title="Chat on WhatsApp">
+  <div class="wa-pulse"></div>
+  <i class="fab fa-whatsapp"></i>
+  <div class="whatsapp-tooltip">Chat with us on WhatsApp</div>
+</a>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="Gallery image"/>
+</div>
+
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeBookingModal()">✕</button>
+    <h3>Book Your Package</h3>
+    <p class="modal-sub" id="modalPackageName"></p>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Your name" id="mname"/>
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" placeholder="+91 XXXXX XXXXX" id="mphone"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="you@email.com" id="memail"/>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Travel Date</label>
+        <input type="date" id="mdate"/>
+      </div>
+      <div class="form-group">
+        <label>Travelers</label>
+        <select id="mtravelers">
+          <option>1 Person</option>
+          <option>2 Persons</option>
+          <option>3-5 Persons</option>
+          <option>6-10 Persons</option>
+          <option>10+ Persons</option>
+        </select>
+      </div>
+    </div>
+    <button class="form-submit" onclick="submitBooking()">
+      <i class="fas fa-calendar-check" style="margin-right:8px;"></i>
+      Confirm Booking Request
+    </button>
+  </div>
+</div>
+
+<script>
+  /* ── NAVBAR ── */
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const sections = document.querySelectorAll('section[id], div[id]');
+
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('back-top').classList.toggle('visible', window.scrollY > 400);
+    highlightNav();
+  });
+
+  function highlightNav() {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 140) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  /* ── MOBILE MENU ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+
+  /* ── HERO SLIDER ── */
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots   = document.querySelectorAll('.hero-dot');
+
+  function goSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
+
+  /* ── FADE-IN OBSERVER ── */
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* ── PACKAGE FILTER ── */
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.pkg-card').forEach(card => {
+        const types = card.dataset.type || '';
+        const show  = filter === 'all' || types.includes(filter);
+        card.style.display = show ? 'block' : 'none';
+      });
+    });
+  });
+
+  /* ── GALLERY LIGHTBOX ── */
+  function openLightbox(el) {
+    const img = el.querySelector('img');
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLightbox(); closeBookingModal(); } });
+
+  /* ── BOOKING MODAL ── */
+  function openBookingModal(name) {
+    document.getElementById('modalPackageName').textContent = '📦 Package: ' + name;
+    document.getElementById('bookingModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeBookingModal() {
+    document.getElementById('bookingModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('bookingModal').addEventListener('click', function(e) {
+    if (e.target === this) closeBookingModal();
+  });
+  function submitBooking() {
+    const name  = document.getElementById('mname').value.trim();
+    const phone = document.getElementById('mphone').value.trim();
+    const email = document.getElementById('memail').value.trim();
+    if (!name || !phone || !email) { alert('Please fill in your name, phone, and email to proceed.'); return; }
+    alert('🎉 Booking request sent! Our team will call you shortly to confirm your trip details.');
+    closeBookingModal();
+    ['mname','mphone','memail','mdate'].forEach(id => document.getElementById(id).value = '');
+  }
+
+  /* ── CONTACT FORM ── */
+  function submitForm() {
+    const name  = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const msg   = document.getElementById('fmsg').value.trim();
+    if (!name || !phone || !email || !msg) { alert('Please fill in all required fields (marked with *).'); return; }
+    document.getElementById('formBody').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+  function resetForm(e) {
+    e.preventDefault();
+    document.getElementById('formBody').style.display = 'block';
+    document.getElementById('formSuccess').style.display = 'none';
+    ['fname','fphone','femail','fmsg','fdest','fdate'].forEach(id => document.getElementById(id).value = '');
+  }
+
+  /* ── SMOOTH ANCHOR FIX FOR NAV HEIGHT ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ── STAGGER FADE-IN DELAYS ── */
+  document.querySelectorAll('.services-grid .service-card').forEach((el,i) => {
+    el.style.transitionDelay = (i * 0.08) + 's';
+  });
+  document.querySelectorAll('.packages-grid .pkg-card').forEach((el,i) => {
+    el.style.transitionDelay = (i * 0.07) + 's';
+  });
+</script>
+
+</body>
+</html>
